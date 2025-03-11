@@ -35,12 +35,12 @@ const Nav = () => {
         </ul>
         {/* Icons */}
         <div className='hidden md:flex items-center gap-4'>
-            <NavLink to="/"><FaCartShopping /></NavLink>
+            <NavLink to="/cart"><FaCartShopping /></NavLink>
         </div>
         {/* HamBurger for Mobile */}
         <div className='flex justify-around items-center md:hidden gap-4 w-full'>
         <button  onClick={()=>setVisible(!visible)} className=' '><GiHamburgerMenu size={24} /></button>
-        <NavLink to="/"><FaCartShopping/></NavLink>
+        <NavLink to="/cart"><FaCartShopping/></NavLink>
         </div>
            
         
