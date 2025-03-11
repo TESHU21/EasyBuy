@@ -9,11 +9,13 @@ import {
   } from "@/components/ui/card"
   import { Button } from '@/components/ui/button'
   import ProductDetail from './ProductDetail'
+  import { useCart } from '@/context/cartContext'
 
   
 
 const ProductItem = ({products}) => {
     const [open, setOpen] = useState(false)
+    const {addToCart}=useCart()
   return (
     <div className='w-full'>
     <Card>
@@ -27,7 +29,7 @@ const ProductItem = ({products}) => {
   </CardContent>
   <CardFooter className="flex justify-between">
     <Button  onClick={()=>setOpen(true)} className='bg-gray-200 text-red-500 p-4 rounded-md'>Quick View</Button>
-    <Button className='bg-violet-500 text-white p-4 rounded-md'>Add to Cart</Button>
+    <Button  onClick={()=>addToCart(products)} className='bg-violet-500 text-white p-4 rounded-md'>Add to Cart</Button>
   </CardFooter>
 </Card>
 <ProductDetail products={products}  open={open} setOpen={setOpen}/>
