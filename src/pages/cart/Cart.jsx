@@ -16,7 +16,7 @@ const Cart = () => {
               cartItems.map((item)=>(
                 <div key={item.id} className=' flex justify-center '>
                   <p>{item.name} -  ETB {item.price} X {item.quantity}</p>
-                  <Button onClick={removeFromCart}>Remove</Button>
+                  <Button onClick={()=>removeFromCart(item)}>Remove</Button>
 
                 </div>
               )

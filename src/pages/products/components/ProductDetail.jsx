@@ -12,11 +12,13 @@ import {
   import { HiPlusSmall } from "react-icons/hi2";
   import { FiMinus } from "react-icons/fi";
 import { Button } from '@/components/ui/button';
+import { useCart } from '@/context/cartContext';
 
   
 
 const ProductDetail = ({products,open,setOpen}) => {
     const [quantity,setQuantity] = useState(1)
+    const {addToCart}=useCart()
     const handleChange = (e) =>{
 
         let value = e.target.value
@@ -57,7 +59,7 @@ const ProductDetail = ({products,open,setOpen}) => {
                     </div>
 
                 <div className='flex justify-between items-center pt-2'><h1> <span className=' font-semibold'>SubTotal : ETB </span>{subTotal}</h1>
-                <button className='bg-violet-500 text-white p-2 rounded-md'>Add to Cart</button>  
+                <button  onClick={()=>addToCart({...products,quantity})} className='bg-violet-500 text-white p-2 rounded-md'>Add to Cart</button>  
                      
 
 
