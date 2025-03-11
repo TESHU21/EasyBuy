@@ -18,17 +18,17 @@ const Nav = () => {
         {/* Desktop Menu */}
         <ul className=' hidden md:flex gap-12 justify-center   '>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  lg:after:left-0":""} to='/'>Home</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  md:after:left-0":""} to='/'>Home</NavLink>
 
             </li>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  lg:after:left-0":""} to='/shop'>Shop</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative  py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  md:after:left-0":""} to='/shop'>Shop</NavLink>
             </li>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  lg:after:left-0":""} to='/about'>About</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  md:after:left-0":""} to='/about'>About</NavLink>
             </li>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  lg:after:left-0":""} to='/contact'>Contact</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  md:after:left-0":""} to='/contact'>Contact</NavLink>
             </li>
             
                
@@ -50,16 +50,16 @@ const Nav = () => {
             <button onClick={handleCloseMenu} className=' absolute top-1 right-1 hover:text-red-500 '><IoMdClose size={24} className=' text-red-800' /></button>
 
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/'>Home</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative   py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0 md:after:left-0":""} to='/'>Home</NavLink>
             </li>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  lg:after:left-0":""} to='/shop'>Shop</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/shop'>Shop</NavLink>
             </li>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/about'>About</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/about'>About</NavLink>
             </li>
             <li>
-                <NavLink className={({isActive })=>isActive?"relative after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/contact'>Contact</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/contact'>Contact</NavLink>
             </li>
         </ul>
        
