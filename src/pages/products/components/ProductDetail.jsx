@@ -13,6 +13,7 @@ import {
   import { FiMinus } from "react-icons/fi";
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/cartContext';
+import { toast } from 'sonner';
 
   
 
@@ -31,6 +32,14 @@ const ProductDetail = ({products,open,setOpen}) => {
        
     }
     const subTotal = (products.price *(quantity) || 0).toLocaleString()
+
+    // handle Add To Cart
+     const handleAddToCart=(item)=>{
+        const {products,quantity}=item
+        addToCart({...products,quantity})
+          toast.success("Items Added to Cart",{duration:1500})
+          console.log("Items add to the toast")
+        }
   return (
     <Dialog open={open} onOpenChange={setOpen} className=''>
      <DialogTrigger asChild> 
@@ -59,7 +68,7 @@ const ProductDetail = ({products,open,setOpen}) => {
                     </div>
 
                 <div className='flex justify-between items-center pt-2'><h1> <span className=' font-semibold'>SubTotal : ETB </span>{subTotal}</h1>
-                <button  onClick={()=>addToCart({...products,quantity})} className='bg-violet-500 text-white p-2 rounded-md'>Add to Cart</button>  
+                <button  onClick={()=>handleAddToCart(products,quantity)} className='bg-violet-500 text-white p-2 rounded-md'>Add to Cart</button>  
                      
 
 
