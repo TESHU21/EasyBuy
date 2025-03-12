@@ -9,10 +9,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import CartItem from './CartItem'
 
 
 const Cart = () => {
     const {addToCart,removeFromCart,clearCart,getCartTotal,cartItems} = useCart()
+    console.log("Cart Items",cartItems)
   return (
     <div className="flex flex-col">
       <Breadcrumb className="flex justify-center">
@@ -31,16 +33,15 @@ const Cart = () => {
             {cartItems.length===0? (
               <div>Cart is Empty</div>
             ):(
-              cartItems.map((item)=>(
-                <div key={item.id} className=' flex justify-center '>
-                  <p>{item.name} -  ETB {item.price} X {item.quantity}</p>
-                  <Button onClick={()=>removeFromCart(item)}>Remove</Button>
+              <div className=" grid grid-cols-1 md:grid-cols-3">
+                {cartItems.map((item)=><div key={item.id}><CartItem item={item}/></div>
+                )}
 
-                </div>
-              )
+              </div>
+              
               )
 
-            )
+            
             }
         </div>
 
