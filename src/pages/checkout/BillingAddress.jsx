@@ -6,7 +6,7 @@ const BillingAddress = () => {
   return (
     <div className="  flex justify-center ">
         <div className=' w-[600px]   shadow-md  border-2 p-10 '>
-        <FormComp schema={BilligAdressSchema} initialValues={intialValues} fields={fields}/>
+        <FormComp schema={BilligAdressSchema} initialValues={intialValues} fields={fields} submitBtnText="Continue"/>
         </div>
     </div>
   )
