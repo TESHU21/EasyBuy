@@ -16,18 +16,20 @@ import {
 
 const Contact = () => {
   return (
-    <div className=" px-10">
+    <main className=" px-10">
+      <nav aria-label="Breadcrumb navigation">
      <Breadcrumb className="flex justify-center">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            <BreadcrumbLink href="/" aria-label="Go to Home Page">Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Contact</BreadcrumbPage>
+            <BreadcrumbPage aria-current="page">Contact</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      </nav>
       <div className="flex flex-col lg:flex-row pt-6">
         <div className=" flex flex-col p-6 lg:pl-24 flex-1 font-inter  ">
           <h1 className=" text-xl font-bold font-prata text-gray-600">
@@ -50,16 +52,16 @@ const Contact = () => {
             <span>info@easybuy.com</span>
           </p>
           <div className="flex gap-10 lg:gap-16 justify-around it pt-12 lg:pt-20">
-            <a href="" className="text-xl">
+            <a href="" aria-label="Visit our Facebook page" className="text-xl">
               <FaFacebook size={32} color="#3B5998" />
             </a>
-            <a href="">
-              <FaLinkedin size={32} color="#0A66C2" />
+            <a href="" aria-label="Visit our Linkedin page">
+              <FaLinkedin  size={32} color="#0A66C2" />
             </a>
-            <a href="">
+            <a href="" aria-label="Visit Our Instagram Page">
               <FaInstagram size={32} color="#E1306C" />
             </a>
-            <a href="">
+            <a href="" aria-label="Visit our Twitter page">
               <FaTwitter size={32} color="#1DA1F2'" />
             </a>
           </div>
@@ -73,7 +75,7 @@ const Contact = () => {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
