@@ -65,7 +65,7 @@ const Cart = () => {
 
       <div className='flex flex-col  justify-center'>
         {cartItems.length === 0 ? (
-          <div>Cart is Empty</div>
+          <div className=" text-center text-gray-500 font-inter">Your cart is empty</div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 gap-4 md:gap-10">
             {cartItems.map((item) => (
