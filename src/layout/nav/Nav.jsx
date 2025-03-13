@@ -4,11 +4,14 @@ import { FaCartShopping } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { heroImages } from '@/assets/hero/assets';
+import { useCart } from '@/context/cartContext';
 const Nav = () => {
     const [visible, setVisible] = useState(false);
     const handleCloseMenu = () => {
         setVisible(false);
     };
+    const {cartItems}=useCart()
+    const cartItemCount=cartItems.length
   return (
     <nav className='flex  justify-around  md:items-center py-4 px-6   font-medium bg-white'>
         {/* Logo */}
@@ -35,7 +38,16 @@ const Nav = () => {
         </ul>
         {/* Icons */}
         <div className='hidden md:flex items-center gap-4'>
-            <NavLink to="/cart"><FaCartShopping /></NavLink>
+            <NavLink to="/cart">
+            <div className=' relative'>
+            <FaCartShopping size={24} className=' cursor-pointer'/>
+            {cartItemCount > 0 && (
+          <span className="absolute -top-3 -right-5    bg-red-400 text-white text-xs font-bold px-1  rounded-full">
+            {cartItemCount}
+          </span>
+        )}
+            </div>
+            </NavLink>
         </div>
         {/* HamBurger for Mobile */}
         <div className='flex justify-around items-center md:hidden gap-4 w-full'>
