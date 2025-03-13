@@ -8,9 +8,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "./ui/button";
 
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { Input } from "./ui/input";
 import { useEffect } from "react";
 import {
   Select,
@@ -22,7 +22,6 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-import Loader from "../Loader";
 
 const FormComp = ({
   schema,
@@ -174,7 +173,7 @@ const FormComp = ({
               type="submit"
               className=" px-10  py-6 text-base  "
             >
-              {isLoading ? isLoading && <Loader /> : submitBtnText}
+              {isLoading ? isLoading && "Loader" : submitBtnText}
             </Button>
           </div>
         </form>

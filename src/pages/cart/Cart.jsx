@@ -19,10 +19,13 @@ import {
 } from "@/components/ui/card"
 import CartItem from './CartItem';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [selectedItems, setSelectedItems] = useState([]);
-  const { addToCart, removeFromCart, clearCart, getCartTotal, cartItems = [] } = useCart(); // Ensure cartItems is always an array
+  const { addToCart, removeFromCart, clearCart, getCartTotal, cartItems = [] } = useCart(); 
+  const navigate=useNavigate()
+
 
   console.log("Cart Items", cartItems);
 
@@ -40,6 +43,10 @@ const Cart = () => {
   const handleSelectAll = (checked) => {
     setSelectedItems(checked ? cartItems.map((item) => item.id) : []);
   };
+  const handeleCheckout=()=>{
+    navigate("/billing")
+
+  }
 
   return (
     <div className="flex flex-col pb-4">
@@ -80,7 +87,7 @@ const Cart = () => {
               <div className=' flex flex-col gap-7'>
               <p className=" font-semibold  min-w-[200px] text-gray-600 font-inter">Total Price:  {totalPrice.toLocaleString()}</p>
 
-              <Button className=" bg-amber-500 ">Checkout</Button>
+              <Button  onClick={handeleCheckout}   className=" bg-amber-500 ">Checkout</Button>
               </div>
             
             </CardContent>
