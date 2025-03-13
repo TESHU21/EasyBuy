@@ -44,8 +44,29 @@ export const BilligAdressSchema=z.object({
     .max(500, { message: 'Notes cannot exceed 500 characters' })
     .optional(),
 
-
+}
+)
+export const intialValues={
+    firstName:"",
+    lastName:"",
+    streetAddress:"",
+    city:"",
+    country:"",
+    postalCode:"",
+    email:"",
+    phoneNumber:"",
+    additionalNotes:"",
 
 }
-
-)
+export const fields=[
+ { label: "First Name", name: "firstName", type: "text", className: "col-span-1" },
+ { label: "Last Name", name: "lastName", type: "text", className: "col-span-1" },
+ { label: "Street Address", name: "streetAddress", type: "text", className: "col-span-1" },
+ { label: "Street Address", name: "streetAddress", type: "text", className: "col-span-1" },
+ { label: "City/Town", name: "city", type: "text", className: "col-span-1" },
+ { label: "Country/Province", name: "country", type: "text", className: "col-span-1" },
+ { label: "Postal Code", name: "postalCode", type: "text", className: "col-span-1" },
+ { label: "Email Address", name: "email", type: "email", className: "col-span-1" },
+ 
+ { label: "Additional Notes", name: "additionalNotes", type: "textarea", className: "col-span-1" },
+]
