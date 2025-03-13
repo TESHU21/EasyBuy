@@ -11,22 +11,24 @@ import {
 
 const About = () => {
   return (
-    <div>
+    <main>
+      <nav aria-label='Breadcrumb Navigation'>
        <Breadcrumb className="flex justify-center">
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  <BreadcrumbLink href="/" aria-label="Go to Home Page">Home</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>About</BreadcrumbPage>
+                  <BreadcrumbPage aria-current="page">About</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
+            </nav>
     <div className="flex flex-col lg:flex-row gap-10 m-4 px-10">
       <img
         src={AboutImage}
-        alt="Addis Ababa"
+        alt="Scenic view of Easy  Buy Store "
         className=" flex-1 object-cover shadow-lg mt-4 h-96"
       />
       <p className=" flex-1  lg:px-10 text-justify leading-8 font-inter">
@@ -42,7 +44,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam culpa possimus ess
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio illum architecto quae praesentium! Eaque, tenetur totam? Officia dolore minima distinctio dignissimos quam explicabo! Ipsum, nesciunt accusamus dignissimos obcaecati ipsa provident?
       </p>
     </div>
-    </div>
+    </main>
   )
 }
 
