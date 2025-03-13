@@ -10,7 +10,7 @@ const Footer = () => {
     
        {/* 1. Logo Section */}
        <div className="flex flex-col items-center md:items-start  px-6 md:px-16">
-          <img src={heroImages.easybuy} alt="Logo" className="h-32 w-auto font-prata" />
+          <img src={heroImages.easybuy} alt="Easy Buy eCommerce Platform Logo" className="h-32 w-auto font-prata" />
         </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-6 md:px-16 pb-6">
        
@@ -31,10 +31,7 @@ const Footer = () => {
             </ul>
         </div>
 
-        {/* 3. Social Media Section */}
        
-
-        {/* 4. Support & Legal */}
         <div>
           <h1 className="font-prata text-xl mb-3">Support</h1>
           <ul className="text-gray-400 space-y-2 mb-5 px-2">
@@ -59,18 +56,10 @@ const Footer = () => {
             Stay updated with our latest news.
           </p>
           <div className="flex space-x-4 items-center px-2">
-            <a href="/" className="text-[#0A66C2] hover:opacity-80 transition">
-              <FaLinkedinIn size={24} />
-            </a>
-            <a href="/" className="text-[#FF0000] hover:opacity-80 transition">
-              <FaYoutube size={24} />
-            </a>
-            <a href="/" className="text-[#0088CC] hover:opacity-80 transition">
-              <FaTelegramPlane size={24} />
-            </a>
-            <a href="/" className="text-[#E4405F] hover:opacity-80 transition">
-              <FaSquareInstagram size={24} />
-            </a>
+            <a href="https://www.linkedin.com/company/easybuy" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] hover:opacity-80 transition"><FaLinkedinIn size={24} /></a>
+            <a href="https://youtube.com/c/easybuy" target="_blank" rel="noopener noreferrer" className="text-[#FF0000] hover:opacity-80 transition"><FaYoutube size={24} /></a>
+            <a href="https://t.me/easybuy" target="_blank" rel="noopener noreferrer" className="text-[#0088CC] hover:opacity-80 transition"><FaTelegramPlane size={24} /></a>
+            <a href="https://instagram.com/easybuy" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] hover:opacity-80 transition"><FaSquareInstagram size={24} /></a>
           </div>
         </div>
       </div>
