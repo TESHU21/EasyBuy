@@ -52,7 +52,16 @@ const Nav = () => {
         {/* HamBurger for Mobile */}
         <div className='flex justify-around items-center md:hidden gap-4 w-full'>
         <button  onClick={()=>setVisible(!visible)} className=' '><GiHamburgerMenu size={24} /></button>
-        <NavLink to="/cart"><FaCartShopping/></NavLink>
+        <NavLink to="/cart">
+        <div className=' relative'>
+            <FaCartShopping size={24} className=' cursor-pointer'/>
+            {cartItemCount > 0 && (
+          <span className="absolute -top-3 -right-5    bg-red-400 text-white text-xs font-bold px-1  rounded-full">
+            {cartItemCount}
+          </span>
+        )}
+            </div>
+        </NavLink>
         </div>
            
         
