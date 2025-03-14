@@ -90,8 +90,7 @@ const Cart = () => {
               <div className=' flex flex-col gap-7'>
               <p className=" font-semibold  min-w-[200px] text-gray-600 font-inter">Total Price:  {totalPrice.toLocaleString()}</p>
 
-              <Button  onClick={handeleCheckout}    aria-label="Proceed to checkout"
-   className=" bg-amber-500 ">Checkout</Button>
+              <Button  onClick={handeleCheckout}    aria-label="Proceed to checkout"   className=" bg-amber-500 ">Checkout</Button>
               </div>
             
             </CardContent>

@@ -39,6 +39,7 @@ export const products=[
         id:2,
         name:'Dragon Bracelet',
         price:1000,
+        rating:5,
         image:dragonbracelet,
         description:"A fierce and powerful dragon bracelet that symbolizes strength, courage, and protection. Crafted with intricate details and high-quality materials."
     },
@@ -46,6 +47,7 @@ export const products=[
         id:3,
         name:'Dragon Bracelet 2',
         price:500,
+        rating:4,
         image:dragonbracelet2,
         description:"A stunning dragon bracelet that combines elegance and strength. Crafted with high-quality materials and intricate details for a unique and stylish look."
     },
@@ -60,6 +62,7 @@ export const products=[
         id:5,
         name:'Gray Diamond Ring',
         price:2000,
+        rating:4,
         image:five, 
         description:"A timeless diamond ring featuring a brilliant round-cut stone set in 18K gold or platinum. Elegant, radiant, and perfect for any special occasion."
 
@@ -69,6 +72,7 @@ export const products=[
         name:'Gold Plated Necklace',
         price:2000,
         image:four,
+        rating:5,
         description:"A timeless gold plated neacklace featuring a brilliant round-cut stone set in 18K gold or platinum. Elegant, radiant, and perfect for any special occasion."
     }
     ,{
