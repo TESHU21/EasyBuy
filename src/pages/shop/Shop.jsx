@@ -21,7 +21,7 @@ const Shop = () => {
    },[searchValue])
   return (
     <div>
-        <Breadcrumb className="flex justify-center">
+        <Breadcrumb className="flex justify-center"  aria-label="Breadcrumb">
   <BreadcrumbList>
     <BreadcrumbItem>
       <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -33,13 +33,15 @@ const Shop = () => {
   </BreadcrumbList>
 </Breadcrumb>
 <div className='flex flex-col items-center pt-10'>
-    <Input type='text' placeholder='Search Products' className='w-1/3 px-4 py-6' onChange={(e)=> setSearchValue(e.target.value)}/>  
-    <div className='grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-4 p-4'>
+<label htmlFor="search-products" className="sr-only">Search Products</label>
+
+    <Input id="search-products" type='text' placeholder='Search Products' className='w-1/3 px-4 py-6' onChange={(e)=> setSearchValue(e.target.value)}/>  
+    <section role='list' className='grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-4 p-4'>
         {filterdProducts.map((product,index)=>(
-            <ProductItem key={index} products={product} />
+            <ProductItem role="list-item" key={index} products={product} />
         ))}
        
-    </div>
+    </section>
 
 </div>
 
