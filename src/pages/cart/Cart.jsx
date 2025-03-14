@@ -44,7 +44,7 @@ const Cart = () => {
     setSelectedItems(checked ? cartItems.map((item) => item.id) : []);
   };
   const handeleCheckout=()=>{
-    navigate("/billing")
+    navigate("/billing",{state:{selectedItems}})
 
   }
 
