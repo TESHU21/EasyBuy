@@ -42,24 +42,24 @@ const ProductDetail = ({ products, open, setOpen }) => {
           <DialogTitle className="font-prata text-center">Product Detail</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col md:flex-row justify-between items-center gap-20">
-          <img src={products.image} alt={products.name} className="w-full h-64 object-cover" />
+          <img src={products.image} alt={`Image of ${products.name}`} className="w-full h-64 object-cover" />
           <div className="flex flex-col">
             <h1 className="font-prata text-[24px] font-bold pb-2">{products.name}</h1>
             <p><span className="font-semibold font-inter">Description:</span><br />{products.description}</p>
             <p className="font-inter pt-2"><span className="font-semibold">Price:</span> ETB {products.price}</p>
             <div className="flex gap-4 items-center pt-2">
               <span className="font-semibold">Quantity:</span>
-              <button onClick={() => handleQuantityChange('decrement')}><FiMinus size={24} /></button>
+              <button onClick={() => handleQuantityChange('decrement')} aria-label={`Decrement the quantity of ${Item.name}`}><FiMinus size={24} /></button>
               <span>{quantity}</span>
-              <button onClick={() => handleQuantityChange('increment')}><HiPlusSmall size={24} /></button>
+              <button onClick={() => handleQuantityChange('increment')} aria-label={`Increment the quantity of ${Item.name}`}><HiPlusSmall size={24} /></button>
             </div>
             <div className="flex justify-between items-center pt-2">
               <h1><span className="font-semibold">SubTotal: ETB</span> {subTotal}</h1>
-              <button onClick={handleAddToCart} className="bg-violet-500 text-white p-2 rounded-md">Add to Cart</button>
+              <button onClick={handleAddToCart} className="bg-violet-500 text-white p-2 rounded-md" aria-label={`Add Image ${item.name} to cart`}>Add to Cart</button>
             </div>
             <div className="flex gap-4 pt-20">
-              <Button onClick={() => setOpen(false)} className="bg-gray-200 text-red-500 py-6 px-8 rounded-md">Close</Button>
-              <Button className="bg-orange-300 text-white p-6 rounded-md">Check Out</Button>
+              <Button onClick={() => setOpen(false)} className="bg-gray-200 text-red-500 py-6 px-8 rounded-md" aria-lable={`Close Details of ${item.name}`}>Close</Button>
+              <Button className="bg-orange-300 text-white p-6 rounded-md" aria-label="Proceed to Checkout">Check Out</Button>
             </div>
           </div>
         </div>

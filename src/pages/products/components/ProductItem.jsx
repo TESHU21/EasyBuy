@@ -22,19 +22,21 @@ const ProductItem = ({products}) => {
       console.log("Items add to the toast")
     }
   return (
-    <div className='w-full'>
+    <div className=' role="group" aria-labelledby={`product-${products.name}`} tabIndex="0" className="w-full focus:outline-none focus:ring-2 focus:ring-blue-500'>
     <Card>
   <CardHeader>
     <CardTitle className="font-prata text-[14px] font-bold text-center">{products.name}</CardTitle>
     <CardDescription></CardDescription>
   </CardHeader>
   <CardContent>
-    <img src={products.image} alt={products.name} className='w-full h-64 object-cover' />   
+    <img src={products.image} alt={`Image of ${products.name}, priced at $${products.price}`}  className='w-full h-64 object-cover' />   
     <p className='font-inter p-4'>${products.price}</p>
   </CardContent>
   <CardFooter className="flex justify-between">
-    <Button  onClick={()=>setOpen(true)} className='bg-gray-200 text-red-500 p-4 rounded-md'>Quick View</Button>
-    <Button  onClick={()=>handleAddToCart(products)} className='bg-violet-500 text-white p-4 rounded-md'>Add to Cart</Button>
+    <Button  onClick={()=>setOpen(true)} className='bg-gray-200 text-red-500 p-4 rounded-md'         aria-label={`Quick view details of ${products.name}`}
+    >Quick View</Button>
+    <Button  onClick={()=>handleAddToCart(products)} className='bg-violet-500 text-white p-4 rounded-md'         aria-label={`Add ${products.name} to cart`}
+    >Add to Cart</Button>
   </CardFooter>
 </Card>
 <ProductDetail products={products}  open={open} setOpen={setOpen}/>
