@@ -50,17 +50,19 @@ const Cart = () => {
 
   return (
     <div className="flex flex-col pb-4">
+      <nav aria-label='Breadcrumb Navigation'>
       <Breadcrumb className="flex justify-center">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            <BreadcrumbLink href="/" aria-label="Go to homepage">Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Cart</BreadcrumbPage>
+            <BreadcrumbPage arial-current="page">Cart</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      </nav>
       <h1 className=' text-center font-prata font-semibold py-10'>Your Cart</h1>
 
       <div className='flex flex-col  justify-center'>
@@ -76,18 +78,20 @@ const Cart = () => {
              
               <div className="flex items-center gap-2  ">
                 <Checkbox 
+                id="selectAllCheckbox"
                   checked={selectedItems.length === cartItems.length}
                   onCheckedChange={handleSelectAll} 
                   className=" border-2 border-gray-600"
                 />
-                <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                <label htmlFor="selectAllCheckbox" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                   Select All
                 </label>
               </div>
               <div className=' flex flex-col gap-7'>
               <p className=" font-semibold  min-w-[200px] text-gray-600 font-inter">Total Price:  {totalPrice.toLocaleString()}</p>
 
-              <Button  onClick={handeleCheckout}   className=" bg-amber-500 ">Checkout</Button>
+              <Button  onClick={handeleCheckout}    aria-label="Proceed to checkout"
+   className=" bg-amber-500 ">Checkout</Button>
               </div>
             
             </CardContent>
