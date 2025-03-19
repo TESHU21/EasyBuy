@@ -51,7 +51,7 @@ const Nav = () => {
         </div>
         {/* HamBurger for Mobile */}
         <div className='flex justify-around items-center md:hidden gap-4 w-full'>
-        <button  onClick={()=>setVisible(!visible)} className=' '><GiHamburgerMenu size={24} /></button>
+        {!visible &&(<button  onClick={()=>setVisible(!visible)} className=" "><GiHamburgerMenu size={24} /></button>)}
         <NavLink to="/cart">
         <div className=' relative'>
             <FaCartShopping size={24} className=' cursor-pointer'/>
@@ -71,7 +71,7 @@ const Nav = () => {
             <button onClick={handleCloseMenu} className=' absolute top-1 right-1 hover:text-red-500 '><IoMdClose size={24} className=' text-red-800' /></button>
 
             <li>
-                <NavLink className={({isActive })=>isActive?"relative   py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0 md:after:left-0":""} to='/'>Home</NavLink>
+                <NavLink className={({isActive })=>isActive?"relative   py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0 after:left-0":""} to='/'>Home</NavLink>
             </li>
             <li>
                 <NavLink className={({isActive })=>isActive?"relative py-2 after:content-[''] after:absolute after:w-[40px] after:h-[2px] after:bg-gray-700 after:bottom-0  after:left-0":""} to='/shop'>Shop</NavLink>

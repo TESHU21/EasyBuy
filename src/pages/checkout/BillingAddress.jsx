@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 const BillingAddress = ({item}) => {
   const location=useLocation()
-  const selectedItems = location.state?.selectedItems 
+  const selectedItems = location.state.cart
   console.log("Selected Items billing",selectedItems)
   return (
     <div className=' flex flex-col justify-center'>
@@ -36,6 +36,8 @@ const BillingAddress = ({item}) => {
         <FormComp schema={BilligAdressSchema} initialValues={intialValues} fields={fields} submitBtnText="Continue"/>
         </div>
         <OrderItem item={selectedItems}/> 
+        <h1>{selectedItems.name}</h1>
+
         </div>
     </div>
   )
