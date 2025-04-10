@@ -50,6 +50,7 @@ const FormComp = ({
     setShowPassword((prev) => !prev);
   };
   //handle file upload
+  console.log("Submitting")
 
   return (
     <div className="w-full">

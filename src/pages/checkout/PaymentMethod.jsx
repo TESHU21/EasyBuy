@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const PaymentMethod = () => {
+const PaymentMethod = ({setBillingData}) => {
   const [selectedMethod, setSelectedMethod] = useState("card1");
 
   const paymentMethods = [

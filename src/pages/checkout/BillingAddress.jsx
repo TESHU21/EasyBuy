@@ -1,42 +1,26 @@
 import React from 'react'
 import FormComp from '@/components/FormComp'
-import {BilligAdressSchema,intialValues,fields} from "./components/data/billingdata"
+ import { BillingAddressSchema,initialValues,fields} from "./components/data/billingdata"
 import OrderItem from './OrderItem'
-import { useLocation } from 'react-router-dom'
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-const BillingAddress = ({item}) => {
-  const location=useLocation()
-  const selectedItems = location.state.cart
+import { useEffect } from 'react'
+
+const BillingAddress = ({ selectedItems,setBillingData,setStep}) => {
+ 
   console.log("Selected Items billing",selectedItems)
+  const handleSubmit=(data)=>{
+   console.log("Handle Submit",data)
+    
+  }
   return (
     <div className=' flex flex-col justify-center'>
-       <nav aria-label='Breadcrumb Navigation'>
-            <Breadcrumb className="flex justify-center">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink href="/" aria-label="Go to homepage">Home</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage arial-current="page">Checkout</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-            </nav>
+      
       <div  className="  flex flex-col md:flex-row gap-4 justify-center  p-4">
       
-        <div className=' lg:w-[600px]   shadow-md  border-2 p-10 '>
-        <FormComp schema={BilligAdressSchema} initialValues={intialValues} fields={fields} submitBtnText="Continue"/>
+        <div className=' lg:w-[600px]   shadow-md  border-2 p-10  relative'>
+        <FormComp schema={ BillingAddressSchema} initialValues={initialValues} fields={fields} submitBtnText="Continue" onSubmit={handleSubmit}/>
         </div>
-        <OrderItem item={selectedItems}/> 
-        <h1>{selectedItems.name}</h1>
+        
+       
 
         </div>
     </div>

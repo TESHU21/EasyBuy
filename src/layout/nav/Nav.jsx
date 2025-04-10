@@ -13,10 +13,10 @@ const Nav = () => {
     const {cartItems}=useCart()
     const cartItemCount=cartItems.length
   return (
-    <nav className='flex  justify-around  md:items-center py-4 px-6   font-medium bg-white'>
+    <nav className='flex  justify-around  md:items-center  px-6   font-medium bg-white'>
         {/* Logo */}
         <div>
-            <img src={heroImages.easybuy} alt="LOGO" className='w-full h-32' />
+            <img src={heroImages.easybuy} alt="LOGO" className='w-full h-24' />
         </div>
         {/* Desktop Menu */}
         <ul className=' hidden md:flex gap-12 justify-center   '>

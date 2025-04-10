@@ -53,7 +53,7 @@ const Cart = () => {
       return;
     }
 
-    navigate("/billing", { state: { cart: selectedCartItems } });
+    navigate("/checkout", { state: { cart: selectedCartItems } });
   };
 
   return (
