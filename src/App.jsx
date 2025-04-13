@@ -7,10 +7,12 @@ const App = () => {
   return (
     <div>
       <AllRoutes />
-      <Toaster position="top-right"  toastOptions={{
+      <Toaster position="top-right"   toastOptions={{
         style:{
           background: "#1e293b", // Dark blue background
           color: "#f8fafc",
+          marginTop:"4rem"
+        
         }
       }}/>
     </div>
