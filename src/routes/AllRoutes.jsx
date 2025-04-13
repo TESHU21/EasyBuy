@@ -7,6 +7,10 @@ import Contact from '@/pages/contact/Contact'
 import Shop from '@/pages/shop/Shop'
 import Cart from '@/pages/cart/Cart'
 import CheckOut from '@/pages/checkout/CheckOut'
+import AddPaymentCard from "../pages/checkout/paymentMethod/AddPaymentCard"
+import PayPalDetail from '@/pages/checkout/paymentMethod/PayPalDetail'
+import GooglePayDetail from '@/pages/checkout/paymentMethod/GooglePayDetail'
+
 
 const AllRoutes = () => {
   return (
@@ -18,6 +22,9 @@ const AllRoutes = () => {
      <Route path='shop' element={<Shop />} /> 
      <Route path ="cart" element={<Cart/>}/>
      <Route path="checkout" element={<CheckOut/>}/>
+     <Route path="paypal-detail" element={<PayPalDetail/>}/>
+     <Route path="googlepay-detail" element={<GooglePayDetail/>}/>
+     <Route path="addpaymentcard" element={<AddPaymentCard/>}/>
     
     </Route>
 

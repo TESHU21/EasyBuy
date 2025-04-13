@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import BillingAddress from './BillingAddress'
 import OrderItem from './OrderItem'
-import PaymentMethod from './PaymentMethod'
+import PaymentMethod from './paymentMethod/PaymentMethod'
 import { useLocation } from 'react-router-dom'
 import {
     Breadcrumb,
@@ -11,18 +11,23 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
   } from "@/components/ui/breadcrumb";
+  import { usePayment } from '@/context/paymentContext'
 
 
 const CheckOut = () => {
-const stepLabels = ['Billing Address', 'Payment Method', 'Order Item']
 const [billingData,setBillingData]=useState(null)
-  const [step, setStep] = useState(0)
+const {step}=usePayment()
+const stepLabels = ['Billing Address', 'Payment Method', 'Order Item']
+console.log("Current Step ",step)
+
     const location=useLocation()
     const selectedItems = location.state.cart
     const handleBillingData=()=>{
-        console.log
+        
 
     }
+  
+    
   
 
   return (
@@ -41,10 +46,10 @@ const [billingData,setBillingData]=useState(null)
             </Breadcrumb>
             </nav>
       {/* Stepper */}
-      <div className="flex justify-center  gap-10 items-center  mb-6">
+      <div className="flex justify-center  gap-10 items-center   my-8">
         {stepLabels.map((label, index) => (
           <div key={index} className="flex items-center space-x-2 ">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold
               ${index <= step ? 'bg-indigo-600' : 'bg-gray-300'}`}>
               {index + 1}
             </div>
@@ -57,8 +62,8 @@ const [billingData,setBillingData]=useState(null)
       </div>
 
       {/* Step Content */}
-      {step === 0 && <BillingAddress selectedItems={selectedItems} setStep={setStep} setBillingData={setBillingData}/>}
-      {step === 1 && <PaymentMethod />}
+      {step === 0 && <BillingAddress selectedItems={selectedItems}  setBillingData={setBillingData}/>}
+      {step === 1 && <PaymentMethod  />}
       {step === 2 && <OrderItem />}
     </div>
   )

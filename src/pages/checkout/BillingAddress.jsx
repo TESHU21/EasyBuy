@@ -3,12 +3,16 @@ import FormComp from '@/components/FormComp'
  import { BillingAddressSchema,initialValues,fields} from "./components/data/billingdata"
 import OrderItem from './OrderItem'
 import { useEffect } from 'react'
+import { usePayment } from '@/context/paymentContext'
 
-const BillingAddress = ({ selectedItems,setBillingData,setStep}) => {
+const BillingAddress = ({ selectedItems,setBillingData}) => {
+  const {setStep}=usePayment()
+
  
   console.log("Selected Items billing",selectedItems)
   const handleSubmit=(data)=>{
-   console.log("Handle Submit",data)
+    setStep(1)
+   
     
   }
   return (
