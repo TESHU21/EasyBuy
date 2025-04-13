@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutImage from "../../assets/hero/about.jpg"
+import AboutImage from "../../assets/hero/about.png"
 import {
   Breadcrumb,
   BreadcrumbItem,
