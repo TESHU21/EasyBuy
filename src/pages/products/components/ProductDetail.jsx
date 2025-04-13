@@ -55,11 +55,11 @@ const ProductDetail = ({ products, open, setOpen }) => {
             </div>
             <div className="flex justify-between items-center pt-2">
               <h1><span className="font-semibold">SubTotal: ETB</span> {subTotal}</h1>
-              <button onClick={handleAddToCart} className="bg-violet-500 text-white p-2 rounded-md" aria-label={`Add Image ${products.name} to cart`}>Add to Cart</button>
             </div>
             <div className="flex gap-4 pt-20">
               <Button onClick={() => setOpen(false)} className="bg-gray-200 text-red-500 py-6 px-8 rounded-md" aria-lable={`Close Details of ${products.name}`}>Close</Button>
-              <Button className="bg-orange-300 text-white p-6 rounded-md" aria-label="Proceed to Checkout">Check Out</Button>
+              <Button onClick={handleAddToCart} className="bg-violet-500 text-white py-6 rounded-md" aria-label={`Add Image ${products.name} to cart`}>Add to Cart</Button>
+
             </div>
           </div>
         </div>
